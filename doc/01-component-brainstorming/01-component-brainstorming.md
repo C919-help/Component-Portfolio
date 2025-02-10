@@ -195,68 +195,83 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: Music Playlist
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - Models a music playlist, can be thought of as a sequence
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
-  - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
-  - **Additional Considerations** (*note*: "I don't know" is an acceptable
-    answer for each of the following questions):
-    - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Would this component rely on any internal classes (e.g., `Map.Pair`)?
-      Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Would this component need any enums or constants (e.g.,
-      `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Can you implement your secondary methods using your kernel methods?
-      Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+    - Add song (adds to end of the sequence)
+    - Remove song (has to give the name removed)
+    - Pick starting song
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
-  - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
-  - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - add song to queue
+    - play next song
+    - play previous song
+    - Put in random mode (until turned off next songs played will be random)
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, since songs can be added and removed.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I'm thinking of it relying on sequence and queue, maybe map
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't know
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I think so, the pick starting song can be used to implement the play next and previous song methods.
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: Shopping Cart
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This component models an internet shopping cart.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - Add item
+    - Remove item
+    - Size of cart
+    - Get specific information from an item
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - Get total price
+    - Increase/Decrease quantity of an item
+    - Update price of item depending on quantity
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, because many parts of the cart are changeable.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Map and sequence
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't know
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I think so. You would have to use the get information kernel to find the price of an item to add it to the total price.
+
+- Component Design #3: Ticketing System
+  - **Description**:
+    - This component would model a ticketing system used by cybersecurity teams at a company.
+  - **Kernel Methods**:
+    - Assemble ticket and add it
+    - Check ticket
+    - Finalize ticket
+  - **Secondary Methods**:
+    - Assign ticket to certain team member, or maybe have it random by
+    default and this method just changes who it gets assigned to
+    - Show most urgent tickets (by priority number or oldest)
+  - **Additional Considerations** (*note*: "I don't know" is an acceptable
+    answer for each of the following questions):
+    - Would this component be mutable? Answer and explain:
+      - Not as much as the others, but still has a few mutable aspects
+    - Would this component rely on any internal classes (e.g., `Map.Pair`)?
+      Answer and explain:
+      - Map and sequence, I think
+    - Would this component need any enums or constants (e.g.,
+      `Program.Instruction`)? Answer and explain:
+      - I don't know
+    - Can you implement your secondary methods using your kernel methods?
+      Answer, explain, and give at least one example:
+      - Check ticket would have to be used to find out the information that would be used to determine the urgency of a ticket.
 
 ## Post-Assignment
 
