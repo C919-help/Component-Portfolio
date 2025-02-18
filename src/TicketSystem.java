@@ -1,9 +1,26 @@
+import java.util.Queue;
+
 public class TicketSystem {
 
+    private Queue<Ticket> tickQueue;
     // TODO: store a queue
 
     // TODO: add kernel methods
 
+    private final void addTicket(Ticket t) {
+        this.tickQueue.enqueue(t);
+
+    }
+
+    private final Ticket removeFirst() {
+        Ticket t = this.tickQueue.dequeue();
+        return t;
+    }
+
+    private final int numberOfTickets() {
+        int size = this.tickQueue.length();
+        return size;
+    }
     // TODO: add secondary methods
 
     public static void main(String[] args) {
