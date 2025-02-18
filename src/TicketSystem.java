@@ -1,4 +1,4 @@
-import java.util.Queue;
+import components.queue.Queue;
 
 public class TicketSystem {
 
@@ -21,7 +21,12 @@ public class TicketSystem {
         int size = this.tickQueue.length();
         return size;
     }
+
     // TODO: add secondary methods
+    private Ticket getOldest() {
+
+        return this.removeFirst();
+    }
 
     public static void main(String[] args) {
         Ticket t = new Ticket("Broken", "NASA");
