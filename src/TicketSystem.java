@@ -1,8 +1,22 @@
 import components.queue.Queue;
+import components.queue.Queue1L;
 
 public class TicketSystem {
 
     private Queue<Ticket> tickQueue;
+
+    /**
+     * Creator of initial representation.
+     */
+    private void createNewRep() {
+        this.tickQueue = new Queue1L<>();
+
+    }
+
+    public TicketSystem() {
+        this.createNewRep();
+    }
+
     // TODO: store a queue
 
     // TODO: add kernel methods
@@ -39,7 +53,10 @@ public class TicketSystem {
         TicketSystem inProgress = new TicketSystem();
         TicketSystem done = new TicketSystem();
 
-        
+        inProgress.addTicket(t2);
+
+        Ticket oldest = inProgress.getOldest();
+        System.out.print(oldest);
     }
 
 }
