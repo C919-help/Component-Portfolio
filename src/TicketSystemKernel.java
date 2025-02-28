@@ -4,7 +4,7 @@ import components.standard.Standard;
 public interface TicketSystemKernel extends Standard<TicketSystem> {
 
     /**
-     * Adds Ticket t to the TicketSystem
+     * Adds Ticket t to the TicketSystem.
      *
      * @param t
      *            the Ticket to be added
@@ -13,7 +13,7 @@ public interface TicketSystemKernel extends Standard<TicketSystem> {
     void addTicket(Ticket t);
 
     /**
-     * Takes TicketSystem and returns the first Ticket in it
+     * Takes TicketSystem and returns the first Ticket in it.
      *
      * @return the Ticket at the front of the TicketSystem
      * @requires |TicketSystem|>0
@@ -23,7 +23,7 @@ public interface TicketSystemKernel extends Standard<TicketSystem> {
 
     /**
      * Takes the TicketSystem and returns the number of tickets in that
-     * TicketSystem
+     * TicketSystem.
      *
      * @return the number of Tickets in the TicketSystem
      * @ensures int returned = |this|
