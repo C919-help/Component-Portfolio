@@ -1,62 +1,80 @@
-import components.queue.Queue;
-import components.queue.Queue1L;
+import java.util.Comparator;
 
-public class TicketSystem {
-
-    private Queue<Ticket> tickQueue;
+public interface TicketSystem extends TicketSystemKernel {
 
     /**
-     * Creator of initial representation.
+     * Takes TicketSystem and orders it according to the comparator @c.
+     *
+     * @param c
+     *            the comparator that decides how the TicketSystem will be
+     *            sorted
+     * @requires |TicketSystem|>0
+     * @ensures TicketSystem is ordered in the order dictated by @c
+     * @updates this
      */
-    private void createNewRep() {
-        this.tickQueue = new Queue1L<>();
+    void sortBy(Comparator c);
 
-    }
+    /**
+     * Returns an array of the last (numberOfTickets) Tickets in the
+     * TicketSystem.
+     *
+     * @param numberOfTickets
+     *            the number of Tickets to be added to an array from the end of
+     *            the TicketSystem
+     * @return an array of Tickets that are the last (numberOfTickets) Tickets
+     *         in TicketSystem
+     * @requires |TicketSystem|>0
+     * @ensures array returned is composed of the latest (numberOfTickets)
+     *          Tickets
+     */
+    Ticket[] getLatest(int numberOfTickets);
 
-    public TicketSystem() {
-        this.createNewRep();
-    }
+    /**
+     * Takes TicketSystem and returns the final Ticket in it.
+     *
+     * @return the Ticket at the end of the TicketSystem
+     * @requires |TicketSystem|>0
+     * @ensures Ticket returned is the newest Ticket added
+     */
+    Ticket getNewest();
 
-    // TODO: store a queue
+    /**
+     * Takes TicketSystem and returns the highest priority Ticket.
+     *
+     * @return the Ticket at the front of the TicketSystem
+     * @requires |TicketSystem|>0
+     * @ensures Ticket removed is at the front of TicketSystem
+     */
+    Ticket getHighestPriority();
 
-    // TODO: add kernel methods
+    /**
+     * Takes TicketSystem and returns the most urgent Ticket.
+     *
+     * @return the most urgent Ticket
+     * @requires |TicketSystem|>0
+     * @ensures Ticket returned is the most urgent
+     */
+    Ticket getMostUrgent();
 
-    private final void addTicket(Ticket t) {
-        this.tickQueue.enqueue(t);
+    /**
+     * Takes TicketSystem and returns the Ticket at the specific position.
+     *
+     * @param pos
+     *            position of the Ticket wanted
+     * @return the Ticket at the position provided
+     * @requires |TicketSystem|>0
+     * @ensures Ticket returned is the one at the specified position
+     */
+    Ticket getCertainTicket(int pos);
 
-    }
-
-    private final Ticket removeFirst() {
-        Ticket t = this.tickQueue.dequeue();
-        return t;
-    }
-
-    private final int numberOfTickets() {
-        int size = this.tickQueue.length();
-        return size;
-    }
-
-    // TODO: add secondary methods
-    private Ticket getOldest() {
-
-        return this.removeFirst();
-    }
-
-    public static void main(String[] args) {
-        Ticket t = new Ticket("Broken", "NASA");
-        Ticket t2 = new Ticket(t, "Lebron James");
-
-        System.out.println(t);
-        System.out.println(t2);
-
-        TicketSystem todo = new TicketSystem();
-        TicketSystem inProgress = new TicketSystem();
-        TicketSystem done = new TicketSystem();
-
-        inProgress.addTicket(t2);
-
-        Ticket oldest = inProgress.getOldest();
-        System.out.print(oldest);
-    }
-
+    /**
+     * Takes TicketSystem and removes the Ticket at the specific position.
+     *
+     * @param pos
+     *            position of the Ticket wanted
+     * @return the Ticket at the position provided and removes it
+     * @requires |TicketSystem|>0
+     * @ensures Ticket returned and removed is one at the specified position
+     */
+    Ticket removeCertainTicket(int pos);
 }
