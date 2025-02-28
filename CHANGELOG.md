@@ -7,6 +7,13 @@ and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
 
+## [2025.02.28]
+
+### Added
+- interface and contracts for TicketSystemKernel
+- interface and contracts for TicketSystem
+
+
 ## [2025.02.13]
 
 ### Added
@@ -16,8 +23,3 @@ the following form: YYYY.0M.0D.
 - Designed a Ticketing System component
 
 
-## [2025.02.28]
-
-### Added
-- interface and contracts for TicketSystemKernel
-- interface and contracts for TicketSystem
