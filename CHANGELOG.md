@@ -15,3 +15,9 @@ the following form: YYYY.0M.0D.
 - Designed a Shopping Cart component
 - Designed a Ticketing System component
 
+
+## [2025.02.28]
+
+### Added
+- interface and contracts for TicketSystemKernel
+- interface and contracts for TicketSystem
