@@ -76,6 +76,9 @@ public abstract class TicketSystemSecondary implements TicketSystem {
         return this.removeFirst();
     }
 
+    //Returns the description of the ticket as the toString representation
+    //I think the most useful thing about a ticket that can be represented as a
+    //string is the discription of the ticket.
     @Override
     public String toString() {
         return this.description;
