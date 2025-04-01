@@ -1,7 +1,21 @@
 
+import java.util.Comparator;
+
 import components.standard.Standard;
 
 public interface TicketSystemKernel extends Standard<TicketSystem> {
+
+    /**
+     * Takes TicketSystem and orders it according to the comparator @c.
+     *
+     * @param c
+     *            the comparator that decides how the TicketSystem will be
+     *            sorted
+     * @requires |TicketSystem|>0
+     * @ensures TicketSystem is ordered in the order dictated by @c
+     * @updates this
+     */
+    void sortBy(Comparator c);
 
     /**
      * Adds Ticket t to the TicketSystem.

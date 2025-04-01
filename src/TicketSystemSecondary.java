@@ -38,6 +38,7 @@ public abstract class TicketSystemSecondary implements TicketSystem {
 
     }
 
+    // CHECKSTYLE: ALLOW THIS METHOD TO BE OVERRIDDEN
     @Override
     public Ticket getNewest() {
         Ticket current = new Ticket();
@@ -58,7 +59,7 @@ public abstract class TicketSystemSecondary implements TicketSystem {
         Ticket special = new Ticket();
 
         for (int i = 0; i < iterations; i++) {
-            if (i = pos) {
+            if (i == pos) {
                 iterations--;
                 special = this.removeFirst();
             } else {
@@ -76,9 +77,11 @@ public abstract class TicketSystemSecondary implements TicketSystem {
         return this.removeFirst();
     }
 
-    //Returns the description of the ticket as the toString representation
-    //I think the most useful thing about a ticket that can be represented as a
-    //string is the discription of the ticket.
+    /**
+     * Returns the description of the ticket as the toString representation I
+     * think the most useful thing about a ticket that can be represented as a
+     * string is the discription of the ticket.
+     */
     @Override
     public String toString() {
         return this.description;
