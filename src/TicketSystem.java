@@ -1,18 +1,4 @@
-import java.util.Comparator;
-
 public interface TicketSystem extends TicketSystemKernel {
-
-    /**
-     * Takes TicketSystem and orders it according to the comparator @c.
-     *
-     * @param c
-     *            the comparator that decides how the TicketSystem will be
-     *            sorted
-     * @requires |TicketSystem|>0
-     * @ensures TicketSystem is ordered in the order dictated by @c
-     * @updates this
-     */
-    void sortBy(Comparator c);
 
     /**
      * Returns an array of the last (numberOfTickets) Tickets in the
@@ -48,21 +34,12 @@ public interface TicketSystem extends TicketSystemKernel {
     Ticket getHighestPriority();
 
     /**
-     * Takes TicketSystem and returns the most urgent Ticket.
-     *
-     * @return the most urgent Ticket
-     * @requires |TicketSystem|>0
-     * @ensures Ticket returned is the most urgent
-     */
-    Ticket getMostUrgent();
-
-    /**
      * Takes TicketSystem and returns the Ticket at the specific position.
      *
      * @param pos
      *            position of the Ticket wanted
      * @return the Ticket at the position provided
-     * @requires |TicketSystem|>0
+     * @requires 0 <= pos <= |TicketSystem|
      * @ensures Ticket returned is the one at the specified position
      */
     Ticket getCertainTicket(int pos);

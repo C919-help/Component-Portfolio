@@ -1,5 +1,6 @@
 public abstract class TicketSystemSecondary implements TicketSystem {
 
+    @Override
     public Ticket getCertainTicket(int pos) {
         Ticket special = new Ticket();
         for (int i = 0; i < this.numberOfTickets(); i++) {
@@ -15,8 +16,9 @@ public abstract class TicketSystemSecondary implements TicketSystem {
 
     }
 
+    @Override
     public Ticket[] getLatest(int numberOfTickets) {
-        Ticket[] array = new Ticket[];
+        Ticket[] array = new Ticket[numberOfTickets];
         int iterations = this.numberOfTickets() - numberOfTickets;
 
         for (int i = 0; i < iterations; i++) {
@@ -36,6 +38,8 @@ public abstract class TicketSystemSecondary implements TicketSystem {
 
     }
 
+    // CHECKSTYLE: ALLOW THIS METHOD TO BE OVERRIDDEN
+    @Override
     public Ticket getNewest() {
         Ticket current = new Ticket();
         for (int i = 0; i < this.numberOfTickets(); i++) {
@@ -49,12 +53,13 @@ public abstract class TicketSystemSecondary implements TicketSystem {
         return current;
     }
 
+    @Override
     public Ticket removeCertainTicket(int pos) {
         int iterations = this.numberOfTickets();
         Ticket special = new Ticket();
 
         for (int i = 0; i < iterations; i++) {
-            if (i = pos) {
+            if (i == pos) {
                 iterations--;
                 special = this.removeFirst();
             } else {
@@ -67,9 +72,23 @@ public abstract class TicketSystemSecondary implements TicketSystem {
 
     }
 
+    @Override
     public Ticket getHighestPriority() {
         return this.removeFirst();
-
     }
+
+    /**
+     * Returns the description of the ticket as the toString representation I
+     * think the most useful thing about a ticket that can be represented as a
+     * string is the discription of the ticket.
+     */
+    @Override
+    public String toString() {
+        return this.description;
+    }
+
+    //I don't think equals and hashcode are needed because there aren't any
+    //situations where there would be two of the same ticket in existance unless
+    //a duplicate was made by accident. For hashcode,
 
 }
