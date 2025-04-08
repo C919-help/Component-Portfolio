@@ -1,3 +1,5 @@
+package components.tickets;
+
 public record Ticket(String description, String customer, String assignee) {
     public Ticket(String description, String customer) {
         this(description, customer, null);

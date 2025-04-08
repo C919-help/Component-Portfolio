@@ -1,3 +1,5 @@
+package components.tickets;
+
 public interface TicketSystem extends TicketSystemKernel {
 
     /**
