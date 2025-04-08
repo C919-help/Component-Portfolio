@@ -7,6 +7,13 @@ and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
 
+## [2025.04.8]
+- created TicketSystem Kernel
+- fixed bugs in TicketSystemSecondary
+
+### Added
+- bodies for TicketSystemSecondary
+
 ## [2025.03.27]
 
 ### Added
