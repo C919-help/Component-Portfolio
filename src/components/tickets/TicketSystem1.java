@@ -7,8 +7,6 @@ import components.queue.Queue1L;
 
 /**
  *
- *
- *
  * @convention [this must be a queue of Ticket objects]
  *
  *
