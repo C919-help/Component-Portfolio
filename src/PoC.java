@@ -1,5 +1,6 @@
 import components.queue.Queue;
 import components.queue.Queue1L;
+import components.tickets.Ticket;
 
 public class PoC {
 

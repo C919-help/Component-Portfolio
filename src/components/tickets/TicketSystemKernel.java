@@ -1,3 +1,4 @@
+package components.tickets;
 
 import java.util.Comparator;
 
@@ -15,7 +16,7 @@ public interface TicketSystemKernel extends Standard<TicketSystem> {
      * @ensures TicketSystem is ordered in the order dictated by @c
      * @updates this
      */
-    void sortBy(Comparator c);
+    void sortBy(Comparator<Ticket> c);
 
     /**
      * Adds Ticket t to the TicketSystem.

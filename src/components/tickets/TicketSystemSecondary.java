@@ -1,17 +1,23 @@
+package components.tickets;
+
 public abstract class TicketSystemSecondary implements TicketSystem {
+
+    private void rotate(int numRotations) {
+        for (int i = 0; i < numRotations; i++) {
+            this.addTicket(this.removeFirst());
+        }
+    }
 
     @Override
     public Ticket getCertainTicket(int pos) {
-        Ticket special = new Ticket();
-        for (int i = 0; i < this.numberOfTickets(); i++) {
-            if (i == pos) {
-                special = this.removeFirst();
-                this.addTicket(special);
-            } else {
-                Ticket filler = this.removeFirst();
-                this.addTicket(filler);
-            }
-        }
+
+        this.rotate(pos);
+
+        Ticket special = this.removeFirst();
+        this.addTicket(special);
+
+        this.rotate(this.numberOfTickets() - pos - 1);
+
         return special;
 
     }
@@ -41,33 +47,27 @@ public abstract class TicketSystemSecondary implements TicketSystem {
     // CHECKSTYLE: ALLOW THIS METHOD TO BE OVERRIDDEN
     @Override
     public Ticket getNewest() {
-        Ticket current = new Ticket();
-        for (int i = 0; i < this.numberOfTickets(); i++) {
-            Ticket filler = this.removeFirst();
-            if (i == this.numberOfTickets() - 1) {
-                current = this.removeFirst();
-            }
-            this.addTicket(filler);
 
+        for (int i = 0; i <= this.numberOfTickets(); i++) {
+            this.addTicket(this.removeFirst());
         }
-        return current;
+        Ticket newest = this.removeFirst();
+
+        return newest;
     }
 
     @Override
     public Ticket removeCertainTicket(int pos) {
-        int iterations = this.numberOfTickets();
-        Ticket special = new Ticket();
-
-        for (int i = 0; i < iterations; i++) {
-            if (i == pos) {
-                iterations--;
-                special = this.removeFirst();
-            } else {
-                Ticket filler = new Ticket();
-                this.addTicket(filler);
-            }
-
+        for (int i = 0; i < pos; i++) {
+            this.addTicket(this.removeFirst());
         }
+
+        Ticket special = this.removeFirst();
+
+        for (int i = pos + 1; i < this.numberOfTickets(); i++) {
+            this.addTicket(this.removeFirst());
+        }
+
         return special;
 
     }
@@ -79,12 +79,19 @@ public abstract class TicketSystemSecondary implements TicketSystem {
 
     /**
      * Returns the description of the ticket as the toString representation I
-     * think the most useful thing about a ticket that can be represented as a
-     * string is the discription of the ticket.
+     * think the most useful thing about a ticketSystem to return as a string
+     * would be its variable name.
      */
     @Override
     public String toString() {
-        return this.description;
+        String line = "[";
+        for (int i = 0; i < this.numberOfTickets(); i++) {
+            Ticket myTick = this.removeFirst();
+            line += myTick;
+            this.addTicket(myTick);
+        }
+        line += "]";
+        return line;
     }
 
     //I don't think equals and hashcode are needed because there aren't any
