@@ -96,23 +96,29 @@ public abstract class TicketSystemSecondary implements TicketSystem {
     }
 
     @Override
-    public Boolean equals(TicketSystem obj) {
+    public boolean equals(Object obj) {
         if (obj == null) {
             return false;
-        } else if (!(obj instanceof TicketSystem<Ticket>)) {
+        }
+
+        if (!(obj instanceof TicketSystem)) {
             return false;
-        } else if (obj.numberOfTickets() != this.numberOfTickets()) {
+        }
+
+        TicketSystem test = (TicketSystem) obj;
+
+        if (test.numberOfTickets() != this.numberOfTickets()) {
             return false;
         }
 
         for (int i = 0; i < this.numberOfTickets(); i++) {
             Ticket mine = this.removeFirst();
-            Ticket theirs = obj.removeFirst();
+            Ticket theirs = test.removeFirst();
             if (!mine.equals(theirs)) {
                 return false;
             }
             this.addTicket(mine);
-            obj.addTicket(theirs);
+            test.addTicket(theirs);
         }
         return true;
 

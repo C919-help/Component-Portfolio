@@ -8,6 +8,23 @@ import org.junit.Test;
 
 public class TicketSystem1Tests {
 
+    private TicketSystem createFromArgs(Ticket... tickets) {
+        TicketSystem toReturn = new TicketSystem1();
+        for (Ticket ticket : tickets) {
+            toReturn.addTicket(ticket);
+        }
+        return toReturn;
+    }
+
+    //Constructor
+
+    @Test
+    public void testConstructor() {
+        TicketSystem t = new TicketSystem1();
+        TicketSystem tRef = new TicketSystem1();
+        assertEquals(tRef, t);
+    }
+
     //Kernel Methods
 
     @Test
@@ -49,20 +66,15 @@ public class TicketSystem1Tests {
 
     @Test
     public void testRemoveFirst2() {
-        TicketSystem t = new TicketSystem1();
         Ticket tick = new Ticket("hurry", "Cindy");
         Ticket tickTwo = new Ticket("Test", "Michael");
-        t.addTicket(tick);
-        t.addTicket(tickTwo);
-        Ticket exOne = t.removeFirst();
-        TicketSystem tRef = new TicketSystem1();
-        tRef.addTicket(tick);
-        t.addTicket(tickTwo);
-        Ticket exTwo = tRef.removeFirst();
-        assertEquals(tRef, t);
-        assertEquals(exOne, exTwo);
-        assertEquals(exOne, tick);
-        assertEquals(exTwo, tick);
+        TicketSystem underTest = this.createFromArgs(tick, tickTwo);
+        TicketSystem ref = this.createFromArgs(tickTwo);
+
+        Ticket toCheck = underTest.removeFirst();
+
+        assertEquals(ref, underTest);
+        assertEquals(tick, toCheck);
     }
 
     @Test
@@ -99,19 +111,21 @@ public class TicketSystem1Tests {
     }
 
     @Test
-    public void testSortBy1(Comparator<Ticket> c) {
+    public void testSortBy1() {
         TicketSystem t = new TicketSystem1();
         Ticket tick = new Ticket("hurry", "Cindy");
         t.addTicket(tick);
         TicketSystem tRef = new TicketSystem1();
         tRef.addTicket(tick);
-        t.sortBy(c);
-        tRef.sortBy(c);
+        Comparator<Ticket> alphabetical = (o1, o2) -> o1.description()
+                .compareToIgnoreCase(o2.description());
+        t.sortBy(alphabetical);
+        tRef.sortBy(alphabetical);
         assertEquals(tRef, t);
     }
 
     @Test
-    public void testSortBy2(Comparator<Ticket> c) {
+    public void testSortBy2() {
         TicketSystem t = new TicketSystem1();
         Ticket tick = new Ticket("hurry", "Cindy");
         Ticket tickTwo = new Ticket("Test", "Michael");
@@ -120,13 +134,15 @@ public class TicketSystem1Tests {
         TicketSystem tRef = new TicketSystem1();
         tRef.addTicket(tick);
         tRef.addTicket(tickTwo);
-        t.sortBy(c);
-        tRef.sortBy(c);
+        Comparator<Ticket> alphabetical = (o1, o2) -> o1.customer()
+                .compareToIgnoreCase(o2.customer());
+        t.sortBy(alphabetical);
+        tRef.sortBy(alphabetical);
         assertEquals(tRef, t);
     }
 
     @Test
-    public void testSortBy3(Comparator<Ticket> c) {
+    public void testSortBy3() {
         TicketSystem t = new TicketSystem1();
         Ticket tick = new Ticket("hurry", "Cindy");
         Ticket tickTwo = new Ticket("Test", "Michael");
@@ -138,8 +154,10 @@ public class TicketSystem1Tests {
         tRef.addTicket(tick);
         tRef.addTicket(tickTwo);
         tRef.addTicket(tickThree);
-        t.sortBy(c);
-        tRef.sortBy(c);
+        Comparator<Ticket> alphabetical = (o1, o2) -> o1.toString()
+                .compareToIgnoreCase(o2.toString());
+        t.sortBy(alphabetical);
+        tRef.sortBy(alphabetical);
         assertEquals(tRef, t);
     }
 
@@ -364,20 +382,16 @@ public class TicketSystem1Tests {
 
     @Test
     public void testGetHighestPriority2() {
-        TicketSystem t = new TicketSystem1();
+
         Ticket tick = new Ticket("hurry", "Cindy");
         Ticket tickTwo = new Ticket("Test", "Michael");
-        t.addTicket(tick);
-        t.addTicket(tickTwo);
-        Ticket exOne = t.getHighestPriority();
-        TicketSystem tRef = new TicketSystem1();
-        tRef.addTicket(tick);
-        t.addTicket(tickTwo);
-        Ticket exTwo = tRef.getHighestPriority();
-        assertEquals(tRef, t);
-        assertEquals(exOne, exTwo);
-        assertEquals(exOne, tick);
-        assertEquals(exTwo, tick);
+        TicketSystem underTest = this.createFromArgs(tick, tickTwo);
+        TicketSystem ref = this.createFromArgs(tickTwo);
+
+        Ticket toCheck = underTest.getHighestPriority();
+
+        assertEquals(ref, underTest);
+        assertEquals(tick, toCheck);
     }
 
     @Test
@@ -419,6 +433,11 @@ public class TicketSystem1Tests {
         assertEquals(exOne, exTwo);
     }
 
-    //Test equals??
+    @Test
+    public void testEquals() {
+        TicketSystem t = new TicketSystem1();
+        TicketSystem tRef = new TicketSystem1();
+        assertEquals(tRef, t);
+    }
 
 }
