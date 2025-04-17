@@ -2,7 +2,7 @@ import components.tickets.Ticket;
 import components.tickets.TicketSystem;
 import components.tickets.TicketSystem1;
 
-public class finalPoC {
+public class UseCase1 {
 
     public static void main(String[] args) {
         Ticket t = new Ticket("Broken", "NASA");
@@ -23,10 +23,10 @@ public class finalPoC {
         // ticket gets done and moves on
 
         // turns out final 2 tickets added are more urgent than the rest and gets
-        //those done
+        // those done
         Ticket[] array = ourSystem.getLatest(2);
 
-        //finally gets the last ticket to get done
+        // finally gets the last ticket to get done
         Ticket finalThing = ourSystem.removeFirst();
     }
 }

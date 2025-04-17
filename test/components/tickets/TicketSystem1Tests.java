@@ -16,7 +16,7 @@ public class TicketSystem1Tests {
         return toReturn;
     }
 
-    //Constructor
+    // Constructor
 
     @Test
     public void testConstructor() {
@@ -25,7 +25,7 @@ public class TicketSystem1Tests {
         assertEquals(tRef, t);
     }
 
-    //Kernel Methods
+    // Kernel Methods
 
     @Test
     public void testAddTicket1() {
@@ -161,7 +161,7 @@ public class TicketSystem1Tests {
         assertEquals(tRef, t);
     }
 
-    //Secondary Methods
+    // Secondary Methods
 
     @Test
     public void testGetCertainTicket1() {
