@@ -371,8 +371,10 @@ could help me with my work if the need came up.
 
 I could take classes that align more with my career trajectory and connect with
 those professors and potentially former students. I could try to pick up skills
-commonly used in that career path and learn about what in done in those jobs.
-I could also learn from coworkers in future internships
+commonly used in that career path, learn about what in done in those jobs and
+learn common knowledge in that field. I could also learn from coworkers in 
+future internships and from my past one.
+
 
 ### Changelog
 
