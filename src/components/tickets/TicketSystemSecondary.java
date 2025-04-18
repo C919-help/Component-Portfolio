@@ -88,14 +88,43 @@ public abstract class TicketSystemSecondary implements TicketSystem {
         for (int i = 0; i < this.numberOfTickets(); i++) {
             Ticket myTick = this.removeFirst();
             line += myTick;
+            line += ", ";
             this.addTicket(myTick);
         }
         line += "]";
         return line;
     }
 
-    //I don't think equals and hashcode are needed because there aren't any
-    //situations where there would be two of the same ticket in existance unless
-    //a duplicate was made by accident. For hashcode,
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+
+        if (!(obj instanceof TicketSystem)) {
+            return false;
+        }
+
+        TicketSystem test = (TicketSystem) obj;
+
+        if (test.numberOfTickets() != this.numberOfTickets()) {
+            return false;
+        }
+
+        for (int i = 0; i < this.numberOfTickets(); i++) {
+            Ticket mine = this.removeFirst();
+            Ticket theirs = test.removeFirst();
+            if (!mine.equals(theirs)) {
+                return false;
+            }
+            this.addTicket(mine);
+            test.addTicket(theirs);
+        }
+        return true;
+
+    }
+
+    //I don't think hashcode is needed because there is no need to generate
+    //a unique identifier for a ticketSystem.
 
 }

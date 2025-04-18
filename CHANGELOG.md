@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
+## [2025.04.17]
+- created TicketSystem Tests
+- created 2 use cases for component
+- fixed equals method
+- Wrote reflection
 
 ## [2025.04.8]
 - created TicketSystem Kernel

@@ -307,18 +307,28 @@ Take some time to fill them out honestly.
 > complete the portfolio project, how much better (or worse) do you think you
 > understand software development and why?
 
-<!-- TODO: discuss -->
+I think I understand software development a lot better from this. Here everything
+was coded from the ground up and being there through every step learning how to
+make everything really flipped my world view on how I used to think things were
+built in software development.
 
 > Also, did the portfolio project surface any gaps in your own knowledge of
 > software development. If so, what are those gaps and how did you address them?
 
-<!-- TODO: discuss -->
+Yeah, stuff like building objects from the ground up, different types of classes,
+attributes of objects, and modern programming languages. I addressed them by getting help and
+seeing what you can do with them in code. Any lingering questions I had I looked
+up. For modern programming languages, my instructor told me.
 
 > Finally, as a part of completing the portfolio project, to what extent has
 > your perspective of software development changed, if at all? In other words,
 > is software development something you still enjoy? If not, why not?
 
-<!-- TODO: discuss -->
+I always knew software development was more deep than I thought it was going into
+these classes and also being in them and this portfolio project was no exception.
+Coding and learning how to do this stuff is rewarding and something I can sometimes
+find fun in, but sometimes it is rough. I would say even through doing this that
+I still find enjoyment in this and how rewarding it makes me feel.
 
 > One of the challenges of completing the portfolio project is picking up a lot
 > of skills on your own. Some of these skills are, of course, software skills.
@@ -326,25 +336,45 @@ Take some time to fill them out honestly.
 > this process. Therefore, the first question is what skills did you pick up
 > through this process?
 
-<!-- TODO: discuss -->
+I don't know if this would fall under the software skills but I can do a lot more
+with Git than I thought I could in just the main course, which I'm glad I got
+experience with in the first place. Another skill I picked up was taking charge
+of my learning for this on the go, for a lot of it I got help from my instructor
+but not having all the information I'll need to know from the beginning is
+something I'm not used to. There were also so many directions I could've gone with
+this in, so deciding what to implement and why on short notices while also producing
+a somewhat competent component is something I'm proud of being able to do.
+
 
 > The follow-up question is: could you rephrase these skills you picked up
 > as bullet points that you could put on a resume? Try it below.
 
-<!-- TODO: discuss -->
+- Decent GitHub experience
+- Adaptability
+- Good with deadlines
+- Good at deciding what is important
+- Self-teacher
 
 > Next, how has working on this project affected your career trajectory?
 > In other words, do you now hate the topic you picked? Or, are you even more
 > interested in it? Both outcomes are valuable to your personal development.
 
-<!-- TODO: discuss -->
+I feel like it's been a bit of both. Like this has made me realize more that
+software development isn't what I want to do in life, but I think it would be
+nice to continue as a hobby, something to do on the side, or as something that
+could help me with my work if the need came up.
 
 > Finally, consider the skills you've picked up and your current career
 > trajectory. What are some things you could do to continue on your
 > career trajectory? Also, who are some mentors you could contact to help
 > you stay on your path?
 
-<!-- TODO: discuss -->
+I could take classes that align more with my career trajectory and connect with
+those professors and potentially former students. I could try to pick up skills
+commonly used in that career path, learn about what in done in those jobs and
+learn common knowledge in that field. I could also learn from coworkers in 
+future internships and from my past one.
+
 
 ### Changelog
 
